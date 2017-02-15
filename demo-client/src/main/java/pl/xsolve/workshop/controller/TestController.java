@@ -16,8 +16,8 @@ import java.util.List;
 @RestController
 public class TestController {
 
-	private static final String LOCAL_SERVER_PORT = "local.server.port";
-	
+    private static final String LOCAL_SERVER_PORT = "local.server.port";
+
     @Autowired
     protected DiscoveryClient discoveryClient;
 
