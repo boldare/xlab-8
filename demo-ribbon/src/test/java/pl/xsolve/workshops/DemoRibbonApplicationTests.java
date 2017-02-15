@@ -1,4 +1,4 @@
-package pl.xsolve.workshop;
+package pl.xsolve.workshops;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class DemoClientApplicationTests {
+public class DemoRibbonApplicationTests {
 
 	@Test
 	public void contextLoads() {
