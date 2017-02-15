@@ -16,6 +16,8 @@ import java.util.List;
 @RestController
 public class TestController {
 
+	private static final String LOCAL_SERVER_PORT = "local.server.port";
+	
     @Autowired
     protected DiscoveryClient discoveryClient;
 
@@ -25,14 +27,8 @@ public class TestController {
     @Value("${booty.message:Default message from application }")
     private String message;
 
-    @RequestMapping("/service-instances/{applicationName}")
-    public List<ServiceInstance> serviceInstancesByApplicationName(
-            @PathVariable String applicationName) {
-        return this.discoveryClient.getInstances(applicationName);
-    }
-
     @RequestMapping("/hello")
     public String hello() {
-        return message + environment.getProperty("local.server.port");
+        return message + environment.getProperty(LOCAL_SERVER_PORT);
     }
 }
