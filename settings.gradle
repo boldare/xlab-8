@@ -1,3 +1,4 @@
 include 'demo'
 include 'demo-client'
 include 'demo-ribbon'
+include 'demo-zuul'
