@@ -4,7 +4,6 @@ buildscript {
 	}
 	repositories {
 		mavenCentral()
-		jcenter()
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
@@ -16,7 +15,7 @@ apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 
 jar {
-	baseName = 'demo-client'
+	baseName = 'demo-config-server'
 	version = '0.0.1-SNAPSHOT'
 }
 
@@ -24,21 +23,20 @@ sourceCompatibility = 1.8
 
 repositories {
 	mavenCentral()
+	maven { url "https://repo.spring.io/snapshot" }
 	maven { url "https://repo.spring.io/milestone" }
 }
 
 
 dependencies {
-	compile('org.springframework.cloud:spring-cloud-starter-eureka')
+	compile('org.springframework.cloud:spring-cloud-config-server')
 	compile('org.springframework.boot:spring-boot-starter-web')
-	compile('org.springframework.cloud:spring-cloud-starter-config')
-	compile('org.springframework.boot:spring-boot-starter-actuator')
 	runtime('org.springframework.boot:spring-boot-devtools')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
 dependencyManagement {
 	imports {
-		mavenBom "org.springframework.cloud:spring-cloud-dependencies:Dalston.M1"
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:Dalston.BUILD-SNAPSHOT"
 	}
 }
