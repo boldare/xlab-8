@@ -1,0 +1,8 @@
+include 'config-server'
+include 'discovery-server'
+include 'formatter-service'
+include 'notification-service'
+include 'scheduler-service'
+include 'weather-service'
+include 'message-sender'
+
